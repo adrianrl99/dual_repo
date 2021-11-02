@@ -12,6 +12,7 @@
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
     "node-cron": "^3.0.0",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "simple-git": "^2.47.0"
   }
 }
