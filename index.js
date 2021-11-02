@@ -1,27 +1,27 @@
 const argv = require("minimist")(process.argv.slice(2));
 const fs = require("fs");
 
-let branchFrom;
-let branchTo;
+let remoteFrom;
+let remoteTo;
 let path;
 
 {
-  const branches = argv["r"] || argv["remotes"];
+  const remotes = argv["r"] || argv["remotes"];
 
-  if (!branches) throw new Error("Missing flag -r or --remotes");
+  if (!remotes) throw new Error("Missing flag -r or --remotes");
 
-  if (typeof branches !== "string")
+  if (typeof remotes !== "string")
     throw new Error("Flag -r or --remotes should be format from/to");
 
-  const splittedBranches = branches.split("/");
+  const splittedRemote = remotes.split("/");
 
-  if (splittedBranches.length !== 2)
+  if (splittedRemote.length !== 2)
     throw new Error("Flag -r or --remotes should be format from/to");
 
-  branchFrom = splittedBranches[0];
-  branchTo = splittedBranches[1];
+  remoteFrom = splittedRemote[0];
+  remoteTo = splittedRemote[1];
 
-  if (!branchFrom || !branchTo)
+  if (!remoteFrom || !remoteTo)
     throw new Error("Flag -r or --remotes should be format from/to");
 }
 
